@@ -315,6 +315,14 @@ a:focus {
 .service__list {
     list-style: none;
     margin-left: 0;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    display: grid;
+    grid-gap: 20px;
+    padding: 0;
+}
+
+.service__list.service__list--home {
     margin-right: 20px;
     padding: 0;
     display: grid;
@@ -329,10 +337,13 @@ a:focus {
     background-color: var(--service-block--background);
     position: relative;
     padding: 20px;
-    padding-top: 100px;
     font-family: var(--font-sans);
     font-size: 20px;
     transition: background-color ease-in-out .25s;
+}
+
+.service__list--home .service-block {
+    padding-top: 100px;
 }
 
 .service-block:hover {
@@ -695,6 +706,10 @@ hr {
 
 .bodytext .signature {
     margin: 40px 0;
+}
+
+.bodytext .intro {
+    font-weight: 700;
 }
 
 .bodytext a {
