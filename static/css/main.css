@@ -5,6 +5,7 @@
     --font-color: var(--main-color);
     --secondary-font-color: #F3E7B0;
     --banner-background: var(--secondary-color);
+    --button-background: #F3E7B0;
     --button-cta-background: var(--main-color);
     --font-serif: "lmroman-10", serif;
     --font-sans: "poppins", serif;
@@ -93,8 +94,14 @@ body {
     }
 
     .navigation__list {
-        justify-content: space-between;
-        padding: 20px 40px;
+        justify-content: flex-start;
+        padding: 20px 0;
+    }
+
+    .navigation__listitem {
+        width: 50%;
+        padding: 0;
+        padding-right: 20px;
     }
 }
 
@@ -154,6 +161,8 @@ body {
 @media (max-width: 1200px) {
     .content-banner {
         flex-direction: column;
+        padding: 0;
+        margin-bottom: 0;
     }
 
     .content-banner__wrapper {
@@ -172,7 +181,7 @@ body {
 
     .content-banner__content {
         max-width: 100%;
-        padding-top: 0;
+        padding: 0 20px;
     }
 }
 
@@ -183,6 +192,7 @@ body {
     font-size: 1.25rem;
     padding: 10px 60px;
     position: relative;
+    display: inline-block;
 }
 
 .button--cta {
@@ -212,6 +222,17 @@ body {
     align-items: center;
 }
 
+@media (max-width: 992px) {
+    .content__wrapper {
+        flex-direction: column;
+    }
+}
+
+.content--testimonials .content__wrapper {
+    flex-direction: column;
+    justify-content: center;
+}
+
 .content__heading {
     font-family: var(--font-serif);
     font-size: 2.65rem;
@@ -219,6 +240,12 @@ body {
     width: 100%;
     text-align: center;
     margin-bottom: 40px;
+}
+
+@media (max-width: 992px) {
+    .content__heading {
+        font-size: 2.5rem;
+    }
 }
 
 .service__list {
@@ -229,6 +256,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
+    width: 100%;
     max-width: 50%;
 }
 
@@ -292,11 +320,288 @@ body {
 }
 
 .service__image {
-    max-height: 645px;
     max-width: 665px;
+}
+
+.service-block__tagline {
+    font-size: 18px;
+}
+
+@media (max-width: 1024px) {
+    .service__list {
+        max-width: none;
+    }
+
+    .service__image {
+        max-width: none;
+        width: 100%;
+    }
+
+    .content__wrapper {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 640px) {
+    .service__list {
+        max-width: none;
+        width: 100%;
+        grid-gap: 0;
+        margin: 0;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .service__listitem {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .service__image {
+        display: none;
+    }
+
+    .service-block {
+        padding-top: 60px;
+    }
+
 }
 
 .footer {
     background-color: var(--main-color);
     padding: 20px;
+}
+.visually-hidden {
+    /*https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html*/
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+}
+
+body:hover .visually-hidden a,
+body:hover .visually-hidden input,
+body:hover .visually-hidden button {
+    display: none !important;
+}
+
+.carousel {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.carousel__item[aria-hidden='true'] {
+    display: none;
+}
+
+.carousel__item[aria-hidden='false'] {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.carousel__content {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    max-width: 709px;
+}
+
+.carousel-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 709px;
+}
+
+.carousel-buttons__button {
+    box-shadow: none;
+    border: none;
+    padding: 10px 20px;
+    background-color: var(--button-background);
+    font-family: var(--font-serif);
+    font-size: 18px;
+    transition: all .25s ease-in-out;
+    cursor: pointer;
+}
+
+.carousel-buttons__button:hover {
+    font-weight: 700;
+    background-color: var(--main-color);
+    color: var(--secondary-font-color);
+    transition: all .25s ease-in-out;
+}
+
+hr {
+    width: 70%;
+    height: 3rem;
+    margin: 20px auto;
+    border: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.spacer--01 {
+    background-image: url(../images/chakra-spacer-01.svg);
+}
+
+.spacer--02 {
+    background-image: url(../images/chakra-spacer-02.svg);
+}
+
+.content--contact .content__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    align-items: normal;
+}
+
+.contact-form {
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+
+.contact-form fieldset {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.contact-form legend {
+    margin-bottom: 20px;
+}
+
+.contact-form span {
+    margin-bottom: 10px;
+}
+
+.contact-form label {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input {
+    background: none;
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid var(--main-color);
+}
+
+.contact-details {
+    background-color: var(--main-color);
+    padding: 20px;
+    grid-row: 1;
+}
+
+.contact-form fieldset div:last-child {
+    grid-column: 1 / 3;
+}
+
+.contact-form input,
+.contact-form textarea {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    padding: 10px;
+}
+
+.contact-form fieldset textarea {
+    min-height: 250px;
+    background-color: #f5f5f5;
+    border: 1px solid var(--main-color);
+}
+
+.contact-details {
+    background-image: url(../images/chakra-large-01.svg);
+    background-repeat: no-repeat;
+    background-position: right -20px bottom -125px;
+}
+
+.contact-details h3 {
+    font-family: var(--font-serif);
+    color: var(--secondary-font-color);
+    font-size: 22px;
+}
+
+.contact-details p {
+    color: #f5f5f5;
+    margin-bottom: 40px;
+}
+
+.contact-details__list {
+    padding: 20px;
+}
+
+.contact-details__listitem {
+    margin-bottom: 40px ;
+}
+
+.contact-details__listlink {
+    display: flex;
+    color: var(--secondary-font-color);
+    text-decoration: none;
+    font-family: var(--font-serif);
+    font-size: 22px;
+}
+
+.contact-details__listlink:hover {
+    text-decoration: underline;
+}
+
+.contact-details__listlink::before {
+    content:"";
+    width: 20px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    left: -20px;
+}
+
+.contact-details__listlink--tel::before {
+    background-image: url(../images/phone.svg);
+}
+
+.contact-details__listlink--email::before {
+    background-image: url(../images/envelope.svg);
+}
+
+.contact-details__listlink--facebook::before {
+    background-image: url(../images/facebook.svg);
+    width: 24px;
+}
+
+@media (max-width: 992px) {
+
+    .content--contact {
+        padding: 0;
+    }
+
+    .content--contact .content__heading {
+        padding: 0 20px;
+    }
+
+    .content--contact .content__wrapper {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0;
+    }
+
+    .contact-form,
+    .contact-details {
+        grid-row: auto;
+    }
+
+    .contact-form fieldset {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0;
+        display: flex;
+        flex-direction: column;
+    }
 }
