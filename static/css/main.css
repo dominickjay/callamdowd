@@ -30,7 +30,9 @@ html:focus-within {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-    scroll-behavior: auto;
+    html:focus-within {
+        scroll-behavior: auto;
+    }
 }
 
 *:focus {
@@ -41,8 +43,9 @@ body {
     font-family: var(--font-sans);
     color: var(--font-color);
     padding: 0;
-    font-size: 1.25rem;
-    line-height: 1.6;
+    font-size: 18px;
+    font-size: 1rem;
+    line-height: 1.75;
 }
 
 a {
@@ -79,6 +82,12 @@ a:focus {
     transition: transform ease-out .25s;
 }
 
+@media (max-width: 640px) {
+    .header .logo {
+        max-width: 225px;
+    }
+}
+
 .navigation__list {
     display: flex;
     align-items: center;
@@ -97,6 +106,8 @@ a:focus {
     font-family: var(--font-serif);
     text-decoration: none;
     color: var(--font-color);
+    letter-spacing: .5px;
+    font-size: 1.15em;
 }
 
 .navigation__listlink:hover {
@@ -113,12 +124,12 @@ a:focus {
     .navigation__list {
         justify-content: flex-start;
         padding: 20px 0;
+        margin: 0;
     }
 
     .navigation__listitem {
-        width: 50%;
         padding: 0;
-        padding-right: 20px;
+        padding-right: 40px;
     }
 }
 
@@ -200,7 +211,6 @@ a:focus {
     max-width: calc(50% + 20px);
     width: 100%;
     padding: 4vw 0 4vw 40px;
-    font-size: 18px;
 }
 
 .content-banner--home .content-banner__content>*+* {
@@ -208,9 +218,10 @@ a:focus {
 }
 
 .content-banner__head {
-    font-size: 2.65rem;
-    font-weight: normal;
     font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: .5px;
 }
 
 .content-banner:not(.content-banner--home) .content-banner__head {
@@ -218,7 +229,6 @@ a:focus {
 }
 
 .content-banner--home .content-banner__bodytext {
-    font-size: 1rem;
     display: block;
 }
 
@@ -241,6 +251,7 @@ a:focus {
         transform: translateY(-50%);
         width: 100%;
         margin: 0;
+        clip-path: none;
     }
 
     .content-banner--home .content-banner__content {
@@ -249,19 +260,28 @@ a:focus {
     }
 }
 
+@media (max-width: 640px) {
+    .content-banner {
+        margin-bottom: 0;
+    }
+}
+
 .button {
     text-decoration: none;
     font-family: var(--font-serif);
+    font-size: 1.15rem;
+    letter-spacing: .5px;
     color: var(--font-color);
-    font-size: 1.25rem;
     padding: 10px 60px;
     position: relative;
     display: inline-block;
+    transition: .25s ease-in-out all;
 }
 
 .button--cta {
     background-color: var(--button-cta-background);
     color: var(--secondary-font-color);
+    transition: .25s ease-in-out all;
 }
 
 .button--cta::before {
@@ -273,6 +293,8 @@ a:focus {
 }
 
 .button--cta:hover {
+    background-color: var(--secondary-font-color);
+    color: var(--button-cta-background);
     text-decoration: underline;
 }
 
@@ -290,6 +312,11 @@ a:focus {
     .content__wrapper {
         flex-direction: column;
     }
+
+    .button {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 .content--testimonials .content__wrapper {
@@ -299,8 +326,9 @@ a:focus {
 
 .content__heading {
     font-family: var(--font-serif);
-    font-size: 2.65rem;
-    font-weight: normal;
+    letter-spacing: .5px;
+    font-size: 2.5rem;
+    font-weight: 200;
     width: 100%;
     text-align: center;
     margin-bottom: 40px;
@@ -308,7 +336,6 @@ a:focus {
 
 @media (max-width: 992px) {
     .content__heading {
-        font-size: 2.5rem;
     }
 }
 
@@ -332,18 +359,35 @@ a:focus {
     max-width: 50%;
 }
 
+@media (max-width: 1024px) {
+    .service__list.service__list--home {
+        max-width: none;
+        margin: 0;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10px;
+    }
+
+    .service__list.service__list--home .service__listitem {
+        grid-column: 1 / 3;
+        margin-bottom: 10px;
+    }
+
+    .service__list.service__list--home .service__listitem:last-child {
+        margin-bottom: 20px;
+    }
+}
+
 .service-block {
     --service-block--background: #FCF7E1;
     background-color: var(--service-block--background);
     position: relative;
     padding: 20px;
     font-family: var(--font-sans);
-    font-size: 20px;
     transition: background-color ease-in-out .25s;
 }
 
 .service__list--home .service-block {
-    padding-top: 100px;
+    padding-top: 95px;
 }
 
 .service-block:hover {
@@ -362,19 +406,25 @@ a:focus {
     top: 20px;
     left: 20px;
     font-weight: 700;
+    opacity: 0.5;
+    font-size: 0.85rem;
 }
 
 .service-block__heading {
     text-transform: uppercase;
-    font-weight: 700;
-    font-size: 1.35rem;
     font-family: var(--font-serif);
+    letter-spacing: .5px;
+    font-size: 1.25rem;
 }
 
 .service-block__link {
     text-decoration: none;
     font-family: var(--font-serif);
     color: var(--font-color);
+    text-align: right;
+    font-size: 1.15rem;
+    margin-bottom: 0;
+    letter-spacing: .5px;
 }
 
 .service-block__link::after {
@@ -399,7 +449,6 @@ a:focus {
 }
 
 .service-block__tagline {
-    font-size: 18px;
 }
 
 .service__listitem--all {
@@ -408,7 +457,6 @@ a:focus {
 
 .service__listitem--all .service-block {
     padding: 20px;
-    font-weight: 700;
     text-transform: uppercase;
 }
 
@@ -492,9 +540,9 @@ body:hover .visually-hidden button {
 }
 
 .carousel__content {
-    font-family: var(--font-serif);
-    font-size: 22px;
-    max-width: 709px;
+    font-family: var(--font-sans);
+    max-width: 710px;
+    font-size: 1.15rem;
 }
 
 .carousel-buttons {
@@ -510,13 +558,13 @@ body:hover .visually-hidden button {
     padding: 10px 20px;
     background-color: var(--button-background);
     font-family: var(--font-serif);
-    font-size: 18px;
     transition: all .25s ease-in-out;
     cursor: pointer;
+    font-size: 1.15rem;
+    letter-spacing: .5px;
 }
 
 .carousel-buttons__button:hover {
-    font-weight: 700;
     background-color: var(--main-color);
     color: var(--secondary-font-color);
     transition: all .25s ease-in-out;
@@ -540,11 +588,18 @@ hr {
     background-image: url(../images/chakra-spacer-02.svg);
 }
 
+@media (max-width: 1020px) {
+
+        hr {
+            margin: 10px auto;
+        }
+}
+
 .content--contact .content__wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
-    align-items: normal;
+    align-items: flex-start;
 }
 
 .contact-form {
@@ -562,10 +617,15 @@ hr {
 
 .contact-form legend {
     margin-bottom: 20px;
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    letter-spacing: .5px;
 }
 
 .contact-form span {
     margin-bottom: 10px;
+    font-family: var(--font-serif);
+    letter-spacing: .5px;
 }
 
 .contact-form label {
@@ -584,6 +644,8 @@ hr {
     background-color: var(--main-color);
     padding: 20px;
     grid-row: 1;
+    position: sticky;
+    top: 0;
 }
 
 .contact-form fieldset div:nth-last-of-type(2) {
@@ -599,14 +661,19 @@ hr {
 .contact-form input,
 .contact-form textarea {
     font-family: var(--font-serif);
-    font-size: 22px;
+    letter-spacing: .5px;
     padding: 10px;
+    background-color: #ededed;
 }
 
 .contact-form fieldset textarea {
     min-height: 250px;
-    background-color: #f5f5f5;
+    background-color: #ededed;
     border: 1px solid var(--main-color);
+}
+
+.contact-form fieldset div {
+    margin-bottom: 20px;
 }
 
 .contact-form .button {
@@ -614,6 +681,13 @@ hr {
     background-color: var(--main-color);
     color: var(--secondary-font-color);
     border: 0;
+    cursor: pointer;
+    transition: .25s ease-in-out all;
+}
+
+.contact-form .button:hover {
+    background-color: var(--secondary-font-color);
+    color: var(--main-color);
 }
 
 .contact-details {
@@ -624,8 +698,9 @@ hr {
 
 .contact-details h3 {
     font-family: var(--font-serif);
+    font-size: 1.25rem;
+    letter-spacing: .5px;
     color: var(--secondary-font-color);
-    font-size: 22px;
 }
 
 .contact-details p {
@@ -646,7 +721,7 @@ hr {
     color: var(--secondary-font-color);
     text-decoration: none;
     font-family: var(--font-serif);
-    font-size: 22px;
+    letter-spacing: .5px;
 }
 
 .contact-details__listlink:hover {
@@ -702,6 +777,15 @@ hr {
         display: flex;
         flex-direction: column;
     }
+
+    .contact-form .button {
+        width: 100%;
+    }
+
+    .contact-details {
+        background-position: right 0px bottom -35px;
+        background-size: 60px;
+    }
 }
 
 .bodytext .signature {
@@ -709,10 +793,8 @@ hr {
 }
 
 .bodytext .intro {
-    font-weight: 700;
 }
 
 .bodytext a {
     color: var(--main-color);
-    font-weight: 700;
 }
