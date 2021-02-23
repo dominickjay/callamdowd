@@ -260,7 +260,7 @@
                 </h2>
                 <div class="content__wrapper">
                     <div class="contact contact-form">
-                        <form data-netlify="true" method="POST">
+                        <form data-netlify="true" method="POST" name="contact">
                             <fieldset>
                                 <legend>Risus, morbi metus, est bibendum elit nisl morbi nisl. Feugiat interdum.</legend>
                                 <div>
