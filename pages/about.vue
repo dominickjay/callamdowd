@@ -140,193 +140,103 @@
         </ul>
         </nav>
     </header>
-    <div>
-        <div class="content-banner content-banner--home">
-            <div class="content-banner__wrapper">
-                <img :src="person.fields.image.fields.file.url + '?h=595'" alt="Callam Dowd Photo" class="content-banner__image">
-            </div>
-            <div class="content-banner__content">
-                <h2 class="content-banner__head">
-                    Helping You Return to Health
-                </h2>
-                <span class="content-banner__bodytext">
-                    In mi vitae nulla at velit. Volutpat ultrices non turpis volutpat vitae, condimentum turpis.
-                    Consequat urna nascetur varius commodo luctus blandit. Massa, pellentesque nisl, diam congue
-                    lacus gravida vestibulum ultrices urna. Nisl quisque feugiat neque pulvinar netus elementum.
-                    Amet semper mi platea eleifend ac dignissim. Ut elit adipiscing neque, dolor sed lacus urna
-                    quam.
-                </span>
-                <a class="content-banner__button button button--cta" href="#contact">
-                    Book Appointment
-                </a>
-            </div>
-        </div>
-    </div>
-    <div>
-        <section class="content content--services" id="services">
-            <h2 class="content__heading">
-                Why Choose Me?
-            </h2>
-            <div class="content__wrapper">
-                <ul class="service__list service__list--home">
-                    <li class="service__listitem">
-                        <div class="service__content service-block">
-                            <span class="service-block__number">01</span>
-                            <span class="service-block__heading">Kinesiology</span>
-                            <span class="service-block__tagline">Nibh risus a dapibus scelerisque viverra leo
-                            </span>
-                            <a href="/" class="service-block__link">Read more</a>
-                        </div>
-                    </li>
-                    <li class="service__listitem">
-                        <div class="service__content service-block">
-                            <span class="service-block__number">01</span>
-                            <span class="service-block__heading">Kinesiology</span>
-                            <span class="service-block__tagline">Nibh risus a dapibus scelerisque viverra leo
-                            </span>
-                            <a href="/" class="service-block__link">Read more</a>
-                        </div>
-                    </li>
-                    <li class="service__listitem">
-                        <div class="service__content service-block">
-                            <span class="service-block__number">01</span>
-                            <span class="service-block__heading">Kinesiology</span>
-                            <span class="service-block__tagline">Nibh risus a dapibus scelerisque viverra leo
-                            </span>
-                            <a href="/" class="service-block__link">Read more</a>
-                        </div>
-                    </li>
-                    <li class="service__listitem">
-                        <div class="service__content service-block">
-                            <span class="service-block__number">01</span>
-                            <span class="service-block__heading">Kinesiology</span>
-                            <span class="service-block__tagline">Nibh risus a dapibus scelerisque viverra leo
-                            </span>
-                            <a href="/" class="service-block__link">Read more</a>
-                        </div>
-                    </li>
-                    <li class="service__listitem service__listitem--all">
-                        <div class="service__content service-block">
-                            <a href="/services.html" class="service-block__link">See All Services</a>
-                        </div>
-                    </li>
-                </ul>
-                <img class="service__image" src="~assets/images/stock-photo-2.png" alt="Service Image">
-            </div>
-        </section>
-    </div>
-    <hr class="spacer spacer--02">
-    <div>
-        <div class="content content--testimonials">
-            <h2 class="content__heading">
-                What People Say About Me
-            </h2>
-            <div class="content__wrapper">
-                <div class="carousel" id="carousel">
-                    <div class="carousel__items">
-                        <div id="focuspoint" class="visually-hidden" tabindex="-1"></div>
-                        <div aria-hidden="false" class="carousel__item">
-                            <div class="carousel__content">
-                                <p>“Neque cursus vitae tortor, imperdiet phasellus nisi, enim et. Blandit sed cursus
-                                    a adipiscing turpis nunc. Amet, quis sed et netus egestas facilisis nunc. Ipsum
-                                    nam eget vitae enim eget. Hendrerit cursus amet risus mi”</p>
-                            </div>
 
-                        </div>
-                        <div aria-hidden="true" class="carousel__item hidden">
-                            <div class="carousel__content">
-                                <p>"Nisi deserunt consectetur labore id ut. Nisi commodo quis esse nisi. Culpa ipsum
-                                    ex ad consectetur anim exercitation nostrud nulla esse eu elit ea qui veniam."
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-buttons">
-                    <button value="prev" aria-label="previous" id="prev" class="carousel-buttons__button">
-                        Previous
-                    </button>
-                    <button value="next" id="next" aria-label="next" class="carousel-buttons__button">
-                        Next
-                    </button>
+    <div>
+            <div class="content-banner">
+                <div class="content-banner__content" style="background-image: url(images/stock-photo-1.png);">
+                    <h2 class="content-banner__head">
+                        About Me
+                    </h2>
                 </div>
             </div>
-        </div>
-        <hr class="spacer spacer--01">
-        <div>
-            <div class="content content--contact" id="contact">
-                <h2 class="content__heading">
-                    Want to Contact Me?
-                </h2>
-                <div class="content__wrapper">
-                    <div class="contact contact-form">
-                        <form data-netlify="true" method="POST">
-                            <fieldset>
-                                <legend>Risus, morbi metus, est bibendum elit nisl morbi nisl. Feugiat interdum.</legend>
-                                <div>
-                                    <label for="firstname">
-                                        <span>First Name:</span>
-                                        <input id="firstname" type="text" name="firstname">
-                                        <abbr title="required" aria-label="required">*</abbr>
-                                    </label>
-                                </div>
-                                <div>
-                                    <label for="lastname">
-                                        <span>Last Name:</span>
-                                        <input id="lastname" type="text" name="lastname">
-                                        <abbr title="required" aria-label="required">*</abbr>
-                                    </label>
-                                </div>
-                                <div>
-                                    <label for="email">
-                                        <span>Email:</span>
-                                        <input id="email" type="text" name="email">
-                                        <abbr title="required" aria-label="required">*</abbr>
-                                    </label>
-                                </div>
-                                <div>
-                                    <label for="telnumber">
-                                        <span>Phone Number:</span>
-                                        <input id="telnumber" type="text" name="telnumber">
-                                        <abbr title="required" aria-label="required">*</abbr>
-                                    </label>
-                                </div>
-                                <div>
-                                    <label for="message">
-                                        <span>Message:</span>
-                                        <textarea id="message" type="text" name="message"></textarea>
-                                        <abbr title="required" aria-label="required">*</abbr>
-                                    </label>
-                                </div>
-                                <div>
-                                    <button class="button" type="submit">Send Message</button>
-                                </div>
-                            </fieldset>
-                        </form>
+            <div>
+                <section class="content">
+                    <h2 class="content__heading">
+                    </h2>
+                    <div class="content__wrapper">
+                        <div class="bodytext">
+                            <vue-markdown>{{ person.fields.aboutMe }}</vue-markdown>
+                        </div>
                     </div>
-                    <div class="contact contact-details">
-                        <h3>Contact Information</h3>
-                        <p>Risus, morbi metus, est bibendum elit nisl morbi nisl. Feugiat interdum.</p>
-                        <ul class="contact-details__list">
-                            <li class="contact-details__listitem">
-                                <a class="contact-details__listlink contact-details__listlink--tel"
-                                :href="'tel:' + person.fields.phone">{{ person.fields.phone }}</a>
-                            </li>
-                            <li class="contact-details__listitem">
-                                <a class="contact-details__listlink contact-details__listlink--email" :href="'mailto:' + person.fields.email">{{ person.fields.email }}</a>
-                            </li>
-                            <li class="contact-details__listitem">
-                                <a class="contact-details__listlink contact-details__listlink--facebook" href="#">{{ person.fields.facebook }}</a>
-                            </li>
-                        </ul>
+                </section>
+            </div>
+            <hr class="spacer spacer--02">
+            <div>
+                <div class="content content--contact" id="contact">
+                    <h2 class="content__heading">
+                        Want to Contact Us?
+                    </h2>
+                    <div class="content__wrapper">
+                        <div class="contact contact-form">
+                            <form data-netlify="true" method="POST">
+                                <fieldset>
+                                    <legend>Risus, morbi metus, est bibendum elit nisl morbi nisl. Feugiat interdum.
+                                    </legend>
+                                    <div>
+                                        <label for="firstname">
+                                            <span>First Name:</span>
+                                            <input id="firstname" type="text" name="firstname">
+                                            <abbr title="required" aria-label="required">*</abbr>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label for="lastname">
+                                            <span>Last Name:</span>
+                                            <input id="lastname" type="text" name="lastname">
+                                            <abbr title="required" aria-label="required">*</abbr>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label for="email">
+                                            <span>Email:</span>
+                                            <input id="email" type="text" name="email">
+                                            <abbr title="required" aria-label="required">*</abbr>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label for="telnumber">
+                                            <span>Phone Number:</span>
+                                            <input id="telnumber" type="text" name="telnumber">
+                                            <abbr title="required" aria-label="required">*</abbr>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label for="message">
+                                            <span>Message:</span>
+                                            <textarea id="message" type="text" name="message"></textarea>
+                                            <abbr title="required" aria-label="required">*</abbr>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <button class="button" type="submit">Send Message</button>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div class="contact contact-details">
+                            <h3>Contact Information</h3>
+                            <p>Risus, morbi metus, est bibendum elit nisl morbi nisl. Feugiat interdum.</p>
+                            <ul class="contact-details__list">
+                                <li class="contact-details__listitem">
+                                    <a class="contact-details__listlink contact-details__listlink--tel"
+                                        href="tel:+07890 123 456">07890 123 456</a>
+                                </li>
+                                <li class="contact-details__listitem">
+                                    <a class="contact-details__listlink contact-details__listlink--email"
+                                        href="mailto:info@callamdowd.com">info@callamdowd.com</a>
+                                </li>
+                                <li class="contact-details__listitem">
+                                    <a class="contact-details__listlink contact-details__listlink--facebook"
+                                        href="#">myfacebookaddress</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
-        <div>
-            <footer class="footer">a</footer>
-        </div>
-    </div>
+            <div>
+                <footer class="footer">a</footer>
+            </div>
 
     <form name="contact" netlify>
       <p>
@@ -341,6 +251,7 @@
     </form>
     <code>{{ person.fields }}</code>
 
+    </div>
   </div>
 </template>
 
@@ -348,6 +259,7 @@
 import {createClient} from '~/plugins/contentful.js'
 import Navigation from '~/components/navigation.vue'
 import ArticlePreview from '~/components/article-preview.vue'
+import VueMarkdown from 'vue-markdown'
 
 const client = createClient()
 
@@ -370,7 +282,8 @@ export default {
   },
   components: {
     Navigation,
-    ArticlePreview
+    ArticlePreview,
+    VueMarkdown
   }
 }
 </script>

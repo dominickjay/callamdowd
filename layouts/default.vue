@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <Greeting></Greeting>
     <main role="main">
       <nuxt/>
     </main>
@@ -8,104 +7,148 @@
 </template>
 
 <script>
-  import Greeting from '~/components/greeting.vue'
 
   export default {
     components: {
-      Greeting
     }
   }
 </script>
 
 <style>
-  @font-face {
-    font-family: "Avenir";
-    font-weight: 400;
+:root {
+    --main-color: #212121;
+    --secondary-color: #F3F3F3;
+    --third-color: #B29702;
+    --font-color: var(--main-color);
+    --secondary-font-color: #F3E7B0;
+    --banner-background: var(--secondary-color);
+    --button-background: #F3E7B0;
+    --button-cta-background: var(--main-color);
+    --font-serif: "lmroman-10", serif;
+    --font-sans: "poppins", serif;
+}
+
+@font-face {
+    font-family: 'lmroman-10';
+    src: url('~assets/fonts/lmroman10-regular.otf');
+    font-weight: normal;
     font-style: normal;
-    src: url("~/static/avenir-400.woff2") format("woff2");
-    font-display: swap;
-  }
+}
 
-  body {
-    background: #E1E7EA;
-    max-width: 1180px;
-    margin: 0 auto;
-    font-family: "Avenir", Tahoma, Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    line-height: 1.65;
-    color: #373F49;
-  }
+@font-face {
+    font-family: 'poppins';
+    src: url('~assets/fonts/Poppins-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
 
-  .wrapper {
-    padding: 2em 0;
-    max-width: 80%;
-    margin: 0 auto;
-  }
+html:focus-within {
+    scroll-behavior: smooth;
+}
 
-  .header {
-    background: #F7F9FA;
-  }
-
-  .page-bar {
-    max-width: 100%;
-    padding: 2em 10%;
-  }
-
-  .blog.header h2,
-  .tag-page.header h2 {
-    text-align: center;
-    padding: 2.5em 0;
-    color: #A0A0A0;
-  }
-
-  img {
-    display: block;
-    width: 100%;
-  }
-
-  h1,
-  h2,
-  h3 {
-    font-size: 2em;
-  }
-
-  /* Copy section */
-  .body-container {
-    background: #ffffff;
-  }
-
-  .items-list {
-    overflow: hidden;
-  }
-
-  .item {
-    padding: 1em 3em 1em 0;
-  }
-
-  @media all and (min-width: 600px) {
-    .item {
-      float: left;
-      width: 50%;
+@media screen and (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
     }
-  }
+}
 
-  @media all and (min-width: 900px) {
-    .item {
-      width: 33.333%;
+*:focus {
+    outline: var(--main-color) solid .5px;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--font-color);
+    padding: 0;
+    font-size: 18px;
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+    background: #FFFFFF;
+    z-index: 1;
+}
+
+.header .logo {
+    margin-right: 40px;
+    min-width: 250px;
+    transition: transform ease-out .25s;
+}
+
+.header .logo:hover {
+    transform: scale(1.025);
+    transition: transform ease-out .25s;
+}
+
+@media (max-width: 640px) {
+    .header .logo {
+        max-width: 225px;
     }
-  }
+}
 
-  /* Shared */
+.navigation__list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-left: 0;
+    padding: 0;
+    list-style: none;
+}
 
-  .tiny {
-    text-transform: uppercase;
-    font-size: 10px;
-    letter-spacing: 1px;
-    color: #A0A0A0;
-  }
+.navigation__listitem {
+    padding: 0 20px;
+}
 
-  *[class*="-bar"] {
-    border-bottom: 1px solid #EBEBEB;
-  }
+.navigation__listlink {
+    font-family: var(--font-serif);
+    text-decoration: none;
+    color: var(--font-color);
+    letter-spacing: .5px;
+    font-size: 1.15em;
+}
 
+.navigation__listlink:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 992px) {
+    .header {
+        flex-direction: column;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    .navigation__list {
+        justify-content: flex-start;
+        padding: 20px 0;
+        margin: 0;
+    }
+
+    .navigation__listitem {
+        padding: 0;
+        padding-right: 40px;
+    }
+}
 </style>

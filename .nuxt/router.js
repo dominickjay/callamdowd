@@ -4,6 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const _33714971 = () => import('..\\pages\\blog\\index.vue' /* webpackChunkName: "pages_blog_index" */).then(m => m.default || m)
+const _558675ce = () => import('..\\pages\\about.vue' /* webpackChunkName: "pages_about" */).then(m => m.default || m)
 const _56d7987a = () => import('..\\pages\\tags\\_tag.vue' /* webpackChunkName: "pages_tags__tag" */).then(m => m.default || m)
 const _31baa829 = () => import('..\\pages\\blog\\_slug.vue' /* webpackChunkName: "pages_blog__slug" */).then(m => m.default || m)
 const _753e5093 = () => import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */).then(m => m.default || m)
@@ -70,6 +71,11 @@ export function createRouter () {
 			path: "/blog",
 			component: _33714971,
 			name: "blog"
+		},
+		{
+			path: "/about",
+			component: _558675ce,
+			name: "about"
 		},
 		{
 			path: "/tags/:tag?",

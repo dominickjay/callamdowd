@@ -18,7 +18,7 @@ const config = {
   ** Headers of the page
   */
   head: {
-    title: 'Custom app with Contentful',
+    title: 'Callam Dowd - Energy Healer / Psychic Healer',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -30,10 +30,8 @@ const config = {
     ]
   },
 
-  /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#2199e8' },
+  // Global CSS: https://go.nuxtjs.dev/config-css
+  css: ['@/assets/css/reset.css'],
 
   /*
   ** Build configuration
