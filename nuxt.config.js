@@ -4,7 +4,10 @@ const ctfConfig = getConfigForKeys([
   'CTF_SPACE_ID',
   'CTF_CDA_ACCESS_TOKEN',
   'CTF_CMA_ACCESS_TOKEN',
-  'CTF_PERSON_ID'
+  'CTF_PERSON_ID',
+  'CTF_HOME_ID',
+  'CTF_SERVICE_TYPE_ID',
+  'CTF_TESTIMONIAL_TYPE_ID'
 ])
 const {createClient} = require('./plugins/contentful')
 const cdaClient = createClient(ctfConfig)
@@ -105,7 +108,10 @@ const config = {
     CTF_SPACE_ID: ctfConfig.CTF_SPACE_ID,
     CTF_CDA_ACCESS_TOKEN: ctfConfig.CTF_CDA_ACCESS_TOKEN,
     CTF_PERSON_ID: ctfConfig.CTF_PERSON_ID,
-    CTF_BLOG_POST_TYPE_ID: ctfConfig.CTF_BLOG_POST_TYPE_ID
+    CTF_BLOG_POST_TYPE_ID: ctfConfig.CTF_BLOG_POST_TYPE_ID,
+    CTF_HOME_ID: ctfConfig.CTF_HOME_ID,
+    CTF_SERVICE_TYPE_ID: ctfConfig.CTF_SERVICE_TYPE_ID,
+    CTF_TESTIMONIAL_TYPE_ID: ctfConfig.CTF_TESTIMONIAL_TYPE_ID
   }
 }
 
