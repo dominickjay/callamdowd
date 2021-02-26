@@ -1,9 +1,7 @@
 <template>
-  <div class="container">
     <main role="main">
       <nuxt/>
     </main>
-  </div>
 </template>
 
 <script>
@@ -107,48 +105,247 @@ a:focus {
     }
 }
 
-.navigation__list {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    margin-left: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.navigation__listitem {
-    padding: 0 20px;
-}
-
-.navigation__listlink {
-    font-family: var(--font-serif);
-    text-decoration: none;
-    color: var(--font-color);
-    letter-spacing: .5px;
-    font-size: 1.15em;
-}
-
-.navigation__listlink:hover {
-    text-decoration: underline;
-}
-
 @media (max-width: 992px) {
     .header {
         flex-direction: column;
         padding-bottom: 0;
         margin-bottom: 0;
     }
+}
 
-    .navigation__list {
-        justify-content: flex-start;
-        padding: 20px 0;
-        margin: 0;
-    }
+.content-banner {
+    display: flex;
+    position: relative;
+    padding: 0 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
 
-    .navigation__listitem {
+.content--contact .content__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    align-items: flex-start;
+}
+
+.contact-form {
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+
+.contact-form fieldset {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.contact-form legend {
+    margin-bottom: 20px;
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    letter-spacing: .5px;
+}
+
+.contact-form span {
+    margin-bottom: 10px;
+    font-family: var(--font-serif);
+    letter-spacing: .5px;
+}
+
+.contact-form label {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input {
+    background: none;
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid var(--main-color);
+}
+
+.contact-details {
+    background-color: var(--main-color);
+    padding: 20px;
+    grid-row: 1;
+    position: sticky;
+    top: 0;
+}
+
+.contact-form fieldset div:nth-last-of-type(2) {
+    grid-column: 1 / 3;
+}
+
+.contact-form fieldset div:last-of-type {
+    grid-column: 1 / 3;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contact-form input,
+.contact-form textarea {
+    font-family: var(--font-serif);
+    letter-spacing: .5px;
+    padding: 10px;
+    background-color: #ededed;
+}
+
+.contact-form fieldset textarea {
+    min-height: 250px;
+    background-color: #ededed;
+    border: 1px solid var(--main-color);
+}
+
+.contact-form fieldset div {
+    margin-bottom: 20px;
+}
+
+.contact-form .button {
+    margin-bottom: 20px;
+    background-color: var(--main-color);
+    color: var(--secondary-font-color);
+    border: 0;
+    cursor: pointer;
+    transition: .25s ease-in-out all;
+}
+
+.contact-form .button:hover {
+    background-color: var(--secondary-font-color);
+    color: var(--main-color);
+}
+
+.contact-details {
+    background-image: url(~assets/images/chakra-large-01.svg);
+    background-repeat: no-repeat;
+    background-position: right -20px bottom -125px;
+}
+
+.contact-details h3 {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    letter-spacing: .5px;
+    color: var(--secondary-font-color);
+}
+
+.contact-details p {
+    color: #f5f5f5;
+    margin-bottom: 40px;
+}
+
+.contact-details__list {
+    padding: 20px;
+}
+
+.contact-details__listitem {
+    margin-bottom: 40px ;
+}
+
+.contact-details__listlink {
+    display: flex;
+    color: var(--secondary-font-color);
+    text-decoration: none;
+    font-family: var(--font-serif);
+    letter-spacing: .5px;
+}
+
+.contact-details__listlink:hover {
+    text-decoration: underline;
+}
+
+.contact-details__listlink::before {
+    content:"";
+    width: 20px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    left: -20px;
+}
+
+.contact-details__listlink--tel::before {
+    background-image: url(~assets/images/phone.svg);
+}
+
+.contact-details__listlink--email::before {
+    background-image: url(~assets/images/envelope.svg);
+}
+
+.contact-details__listlink--facebook::before {
+    background-image: url(~assets/images/facebook.svg);
+    width: 24px;
+}
+
+.content__heading {
+    font-family: var(--font-serif);
+    letter-spacing: .5px;
+    font-size: 2.5rem;
+    font-weight: 200;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 992px) {
+
+    .content--contact {
         padding: 0;
-        padding-right: 40px;
     }
+
+    .content--contact .content__heading {
+        padding: 0 20px;
+    }
+
+    .content--contact .content__wrapper {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0;
+    }
+
+    .contact-form,
+    .contact-details {
+        grid-row: auto;
+    }
+
+    .contact-form fieldset {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-form .button {
+        width: 100%;
+    }
+
+    .contact-details {
+        background-position: right 0px bottom -35px;
+        background-size: 60px;
+    }
+}
+
+hr {
+    width: 70%;
+    height: 3rem;
+    margin: 20px auto;
+    border: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.spacer--01 {
+    background-image: url(~assets/images/chakra-spacer-01.svg);
+}
+
+.spacer--02 {
+    background-image: url(~assets/images/chakra-spacer-02.svg);
+}
+
+@media (max-width: 1020px) {
+
+        hr {
+            margin: 10px auto;
+        }
 }
 </style>

@@ -1,13 +1,12 @@
 
 $(document).ready(function(){
-	console.log('hi')
 	var timer;//will be interval timer
 	var transition_time = 1000; // 1 second
 	var time_between_slides = 4000; // 4 seconds
 	var counter = 1; //use to set slide ids
 	var numslides = $("div.carousel__items div.carousel__item").length; //count the number of slides
 	var current = $("div.carousel__item[aria-hidden='false']");
-	$("div.carousel__item").first().attr("aria-hidden","false")
+    $("div.carousel__item").first().attr("aria-hidden","false")
 	$('#focuspoint').text("Showing Slide "+counter+" of "+numslides);
 	autoPlay = "off";
 

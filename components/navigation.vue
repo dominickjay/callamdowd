@@ -1,43 +1,72 @@
 <template>
-  <nav role="navigation" class="top-nav">
-    <ul class="menu">
-      <li v-if="!/\/.*?\/.*/.test(route.path)" v-for="route in this.$router.options.routes">
-        <nuxt-link :to="{ name: route.name }">{{ route.name.charAt(0).toUpperCase() + route.name.slice(1) }}</nuxt-link>
-      </li>
+  <nav role="navigation" class="navigation">
+    <ul class="navigation__list">
+        <li class="navigation__listitem">
+            <nuxt-link class="navigation__listlink" to="/">
+                Home
+            </nuxt-link>
+        </li>
+        <li class="navigation__listitem">
+            <nuxt-link class="navigation__listlink" to="/about">
+                About
+            </nuxt-link>
+        </li>
+        <li class="navigation__listitem">
+            <nuxt-link class="navigation__listlink" to="/services">
+                Services
+            </nuxt-link>
+        </li>
+        <li class="navigation__listitem">
+            <nuxt-link class="navigation__listlink" to="/tutorials">
+                Tutorials
+            </nuxt-link>
+        </li>
+        <li class="navigation__listitem">
+            <a href="#contact" class="navigation__listlink">Contact</a>
+        </li>
     </ul>
   </nav>
 </template>
 
 <style>
 
-  .person-name:link,
-  .person-name:visited {
-    width: 50%;
-    display: inline-block;
-    font-size: 2em;
+.navigation__list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-left: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navigation__listitem {
+    padding: 0 20px;
+}
+
+.navigation__listlink {
+    font-family: var(--font-serif);
     text-decoration: none;
-    color: #373F49;
-  }
+    color: var(--font-color);
+    letter-spacing: .5px;
+    font-size: 1.15em;
+}
 
-  .top-nav {
-    width: 50%;
-    display: inline-block;
-    text-align: right;
-  }
+.navigation__listlink:hover {
+    text-decoration: underline;
+}
 
-  .menu {
-    display: inline-block;
-  }
+@media (max-width: 992px) {
 
-  .menu li {
-    display: inline-block;
-    margin-left: 1em;
-  }
+    .navigation__list {
+        justify-content: flex-start;
+        padding: 20px 0;
+        margin: 0;
+    }
 
-  .menu a:link,
-  .menu a:visited {
-    color: #373F49;
-    text-decoration: none;
-  }
-
+    .navigation__listitem {
+        padding: 0;
+        padding-right: 40px;
+    }
+}
 </style>

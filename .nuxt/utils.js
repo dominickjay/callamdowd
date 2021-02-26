@@ -113,14 +113,14 @@ export async function setContext(app, context) {
         return process.client
       },
       isStatic: process.static,
-      isDev: true,
+      isDev: false,
       isHMR: false,
       app,
       
       payload: context.payload,
       error: context.error,
       base: '/',
-      env: {"CTF_SPACE_ID":"isw233h8e05n","CTF_CDA_ACCESS_TOKEN":"eVDXtQL4NPS_ze3nja0SzgqAiD8tKQxX5GHNb4Z1ULg","CTF_PERSON_ID":"15jwOBqpxqSAOy2eOO4S0m","CTF_BLOG_POST_TYPE_ID":"blogPost"}
+      env: {"CTF_SPACE_ID":"isw233h8e05n","CTF_CDA_ACCESS_TOKEN":"eVDXtQL4NPS_ze3nja0SzgqAiD8tKQxX5GHNb4Z1ULg","CTF_PERSON_ID":"15jwOBqpxqSAOy2eOO4S0m","CTF_BLOG_POST_TYPE_ID":"blogPost","CTF_HOME_ID":"29H9uYWcklwMnS5qTa4bv1","CTF_SERVICE_TYPE_ID":"service","CTF_TESTIMONIAL_TYPE_ID":"testimonial"}
     }
     // Only set once
     if (context.req) app.context.req = context.req

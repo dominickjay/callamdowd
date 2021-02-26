@@ -1,8 +1,8 @@
 {
   "name": "callam-dowd-site",
   "version": "1.1.1",
-  "description": "A static blog based on Contentful",
-  "author": "stefan judis <stefanjudis@gmail.com>",
+  "description": "Kinesiolgy and Energy Healing",
+  "author": "",
   "private": true,
   "dependencies": {
     "contentful": "^4.3.0",
@@ -11,7 +11,7 @@
     "vue-markdown": "^2.1.3"
   },
   "scripts": {
-    "dev": "nuxt --port 3222",
+    "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",

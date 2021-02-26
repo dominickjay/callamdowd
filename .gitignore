@@ -124,11 +124,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-
-############################################
-# 'blog in 5 minutes' files
-############################################
-
 # Nuxt build
 .nuxt
 
