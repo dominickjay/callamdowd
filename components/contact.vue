@@ -7,8 +7,21 @@
             data-netlify-honeypot="bot-field"
             >
             <input type="hidden" name="form-name" value="ask-question" />
+            <span>Risus, morbi metus, est bibendum elit nisl morbi nisl. Feugiat interdum.</span>
             <p>
-                <label>Your Name: <input type="text" name="name" /></label>
+                <label>First Name: <input type="text" name="first-name" /></label>
+            </p>
+            <p>
+                <label>Last Name: <input type="text" name="last-name" /></label>
+            </p>
+            <p>
+                <label>Email: <input type="text" name="email" /></label>
+            </p>
+            <p>
+                <label>Telephone: <input id="telnumber" type="text" name="telnumber"></label>
+            </p>
+            <p>
+                <label>Message: <textarea id="message" type="text" name="message"></textarea></label>
             </p>
             <button>Submit</button>
         </form>
