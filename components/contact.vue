@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: "QAForm",
+  name: 'QAForm',
   methods: {
     updatePanelist (ev) {
       this.currentPanelist = ev.target.value
