@@ -1,23 +1,6 @@
 <template>
-    <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
-        <input type="hidden" name="contact" value="contact" />
-        <p>
-            <label>Your Name: <input type="text" name="name" /></label>
-        </p>
-        <p>
-            <label>Your Email: <input type="email" name="email" /></label>
-        </p>
-        <p>
-            <label>Your Role: <select name="role[]" multiple>
-            <option value="leader">Leader</option>
-            <option value="follower">Follower</option>
-            </select></label>
-        </p>
-        <p>
-            <label>Message: <textarea name="message"></textarea></label>
-        </p>
-        <p>
-            <button type="submit">Send</button>
-        </p>
-    </form>
+    <form name="Quote Request" method="POST" action="/thankyou" class="max-w-screen-md" data-v-ecda4f4c="" enctype="multipart/form-data"><input type="hidden" name="form-name" value="Quote Request" data-v-ecda4f4c=""> <input name="shoop" class="hidden" data-v-ecda4f4c="" style="display: none"> <fieldset data-v-ecda4f4c=""><legend data-v-ecda4f4c="">Your Info</legend> <div data-v-ecda4f4c=""><label for="name" data-v-ecda4f4c="">Name</label> <input name="name" id="name" required="required" class="std" data-v-ecda4f4c="" type="text"></div> <div data-v-ecda4f4c=""><label for="email" data-v-ecda4f4c="">Email</label> <input type="email" name="email" id="email" required="required" placeholder="example@example.com" class="std" data-v-ecda4f4c=""></div> <div data-v-ecda4f4c=""><label for="phone" data-v-ecda4f4c="">Phone</label><input type="tel" name="phone" id="phone" required="required" placeholder="555-555-5555" class="std" data-v-ecda4f4c=""></div></fieldset>
+    <div class="submit" data-v-ecda4f4c=""><button type="submit" value="Submit" class="text-gray-300 bg-brand-normal font-bold" data-v-ecda4f4c="">
+      Submit
+    </button></div></form>
 </template>
