@@ -81,6 +81,7 @@
                   </ul>
               </div>
           </div>
+          <Contact></Contact>
       </div>
     </div>
     <footer class="footer"></footer>
@@ -92,6 +93,7 @@ import {createClient} from '~/plugins/contentful.js'
 import Logo from '~/components/logo.vue'
 import Navigation from '~/components/navigation.vue'
 import ArticlePreview from '~/components/article-preview.vue'
+import Contact from '~/components/contact.vue'
 
 const client = createClient()
 
@@ -123,7 +125,8 @@ export default {
   components: {
     ArticlePreview,
     Logo,
-    Navigation
+    Navigation,
+    Contact
   }
 }
 </script>
