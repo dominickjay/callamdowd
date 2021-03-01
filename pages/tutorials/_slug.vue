@@ -121,6 +121,11 @@ export default {
     })
     .catch(console.error)
   },
+  data () {
+    return {
+    //  video: post.fields.video.fields.file.url
+    }
+  },
   components: {
     Logo,
     Navigation,

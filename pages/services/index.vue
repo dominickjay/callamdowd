@@ -151,67 +151,6 @@ export default {
 
 <style>
 
-.content-banner:not(.content-banner--home) .content-banner__wrapper {
-    width: 100%;
-    max-height: 300px;
-    overflow: hidden;
-    position: relative;
-}
-
-.content-banner:not(.content-banner--home) .content-banner__wrapper::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--main-color);
-    opacity: 0.5;
-}
-
-.content-banner:not(.content-banner--home) .content-banner__wrapper img {
-    margin: 0 auto;
-    position: relative;
-    top: -100%;
-    width: 100%;
-    clip-path: polygon(0% 100%, 0% 20%, 20% 20%, 20% 0%, 100% 0%, 100% 80%, 80% 80%, 80% 100%);
-}
-
-.content-banner:not(.content-banner--home) .content-banner__content {
-    width: 100%;
-    text-align: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    max-height: 300px;
-    padding: 60px 0;
-    color: var(--secondary-font-color);
-    position: relative;
-    clip-path: polygon(0% 100%, 0% 20%, 20% 20%, 20% 0%, 100% 0%, 100% 80%, 80% 80%, 80% 100%);
-}
-
-.content-banner:not(.content-banner--home) .content-banner__content::before {
-    content: "";
-    background-color: var(--main-color);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0.65;
-}
-
-.content-banner__head {
-    font-family: var(--font-serif);
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: .5px;
-}
-
-.content-banner:not(.content-banner--home) .content-banner__head {
-    position: relative;
-}
-
 .content--services {
   margin-bottom: 60px;
 }
@@ -262,11 +201,6 @@ export default {
     background-color: var(--main-color);
     color: var(--secondary-font-color);
     transition: background-color ease-in-out .25s;
-}
-
-.service-block > * + * {
-    margin-bottom: 20px;
-    display: block;
 }
 
 .service-block__number {

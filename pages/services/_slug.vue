@@ -6,16 +6,24 @@
             <navigation></navigation>
         </header>
         <div class="content-banner">
-            <div class="content-banner__content" style="background-image: url(images/stock-photo-1.png);">
+            <div
+              class="content-banner__content"
+              :style="'background-image: url(' + service.fields.serviceHeadingBackground.fields.file.url + ');'">>
                 <h2 class="content-banner__head">
                     {{ service.fields.serviceHeading }}
                 </h2>
             </div>
         </div>
-        <div class="copy">
-            <h2>{{ service.fields.serviceIntro }}</h2>
-            <p>{{ service.fields.serviceDescription }}</p>
-        </div>
+        <section class="content">
+            <h2 class="content__heading">
+            </h2>
+            <div class="content__wrapper">
+                <div class="bodytext service">
+                    <vue-markdown class="service__intro">{{ service.fields.serviceIntro }}</vue-markdown>
+                    <vue-markdown class="service__description">{{ service.fields.serviceDescription }}</vue-markdown>
+                </div>
+            </div>
+        </section>
       </div>
   </div>
 </template>
@@ -35,7 +43,7 @@ export default {
         'sys.id': env.CTF_PERSON_ID
       }),
       client.getEntries({
-        'content_type': env.CTF_SERVICES_TYPE_ID,
+        'content_type': env.CTF_SERVICE_TYPE_ID,
         'fields.serviceSlug': params.serviceSlug
       })
     ]).then(([entries, services]) => {
@@ -54,5 +62,10 @@ export default {
 </script>
 
 <style>
+
+.service__intro {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
 
 </style>

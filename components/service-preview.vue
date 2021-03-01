@@ -38,10 +38,10 @@ export default {
     transition: background-color ease-in-out .25s;
 }
 
-.service-block > * + * {
+/* .service-block > * + * {
     margin-bottom: 20px;
     display: block;
-}
+} */
 
 .service-block__number {
     position: absolute;
@@ -59,6 +59,10 @@ export default {
     font-size: 1.25rem;
     margin-bottom: 20px;
     display: block;
+}
+
+.service-block__tagline {
+    margin-bottom: 20px;
 }
 
 .service-block__links {

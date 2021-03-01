@@ -7,8 +7,8 @@
       </header>
 
       <section class="content content--posts">
-        <ul class="items-list wrapper">
-          <li class="item" v-for="post in posts">
+        <ul class="post-list wrapper">
+          <li class="post" v-for="post in posts">
             <article-preview :post="post"></article-preview>
           </li>
         </ul>
@@ -127,3 +127,15 @@ export default {
   }
 }
 </script>
+
+<style>
+.post-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.post .thumbnail {
+  margin-bottom: 20px;
+}
+</style>
