@@ -45,7 +45,7 @@
                     </label>
                 </div>
                 <div>
-                    <button class="button" type="submit">Send Message</button>
+                    <button class="button">Send Message</button>
                 </div>
             </fieldset>
         </form>
