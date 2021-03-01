@@ -6,7 +6,6 @@ $(document).ready(function(){
 	var counter = 1; //use to set slide ids
 	var numslides = $("div.carousel__items div.carousel__item").length; //count the number of slides
 	var current = $("div.carousel__item[aria-hidden='false']");
-    $("div.carousel__item").first().attr("aria-hidden","false")
 	$('#focuspoint').text("Showing Slide "+counter+" of "+numslides);
 	autoPlay = "off";
 
@@ -18,6 +17,7 @@ $(document).ready(function(){
 		});
 
 	$(window).on('load', function(){
+    	$("div.carousel__item").first().attr("aria-hidden","false")
 		if(autoPlay == "on"){
 			if(!timer){
 				timer=setInterval(function(){shownext(numslides);},time_between_slides); // every 4 secs next slide
