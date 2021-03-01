@@ -1,6 +1,47 @@
 <template>
-    <form name="Quote Request" method="POST" action="/thankyou" class="max-w-screen-md" data-v-ecda4f4c="" enctype="multipart/form-data"><input type="hidden" name="form-name" value="Quote Request" data-v-ecda4f4c=""> <input name="shoop" class="hidden" data-v-ecda4f4c="" style="display: none"> <fieldset data-v-ecda4f4c=""><legend data-v-ecda4f4c="">Your Info</legend> <div data-v-ecda4f4c=""><label for="name" data-v-ecda4f4c="">Name</label> <input name="name" id="name" required="required" class="std" data-v-ecda4f4c="" type="text"></div> <div data-v-ecda4f4c=""><label for="email" data-v-ecda4f4c="">Email</label> <input type="email" name="email" id="email" required="required" placeholder="example@example.com" class="std" data-v-ecda4f4c=""></div> <div data-v-ecda4f4c=""><label for="phone" data-v-ecda4f4c="">Phone</label><input type="tel" name="phone" id="phone" required="required" placeholder="555-555-5555" class="std" data-v-ecda4f4c=""></div></fieldset>
-    <div class="submit" data-v-ecda4f4c=""><button type="submit" value="Submit" class="text-gray-300 bg-brand-normal font-bold" data-v-ecda4f4c="">
-      Submit
-    </button></div></form>
+    <div class="contact contact-form">
+        <form data-netlify="true" method="POST" name="contact">
+            <fieldset>
+                <legend>Risus, morbi metus, est bibendum elit nisl morbi nisl. Feugiat interdum.</legend>
+                <div>
+                    <label for="firstname">
+                        <span>First Name:</span>
+                        <input id="firstname" type="text" name="firstname">
+                        <abbr title="required" aria-label="required">*</abbr>
+                    </label>
+                </div>
+                <div>
+                    <label for="lastname">
+                        <span>Last Name:</span>
+                        <input id="lastname" type="text" name="lastname">
+                        <abbr title="required" aria-label="required">*</abbr>
+                    </label>
+                </div>
+                <div>
+                    <label for="email">
+                        <span>Email:</span>
+                        <input id="email" type="text" name="email">
+                        <abbr title="required" aria-label="required">*</abbr>
+                    </label>
+                </div>
+                <div>
+                    <label for="telnumber">
+                        <span>Phone Number:</span>
+                        <input id="telnumber" type="text" name="telnumber">
+                        <abbr title="required" aria-label="required">*</abbr>
+                    </label>
+                </div>
+                <div>
+                    <label for="message">
+                        <span>Message:</span>
+                        <textarea id="message" type="text" name="message"></textarea>
+                        <abbr title="required" aria-label="required">*</abbr>
+                    </label>
+                </div>
+                <div>
+                    <button class="button" type="submit">Send Message</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
 </template>

@@ -25,6 +25,7 @@
             </div>
         </section>
       </div>
+      <Contact></Contact>
   </div>
 </template>
 
@@ -33,6 +34,7 @@ import VueMarkdown from 'vue-markdown'
 import {createClient} from '~/plugins/contentful.js'
 import Logo from '~/components/logo.vue'
 import Navigation from '~/components/navigation.vue'
+import Contact from '~/components/contact.vue'
 
 const client = createClient()
 
@@ -56,6 +58,7 @@ export default {
   components: {
     Logo,
     Navigation,
+    Contact,
     VueMarkdown
   }
 }
