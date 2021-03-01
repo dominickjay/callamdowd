@@ -131,8 +131,34 @@ export default {
 <style>
 .post-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-gap: 20px;
+}
+
+.post {
+  background-color: #FCF7E1;
+  position: relative;
+}
+
+.post article > *:not(img){
+  padding: 0 20px;
+  margin-bottom: 10px;
+}
+
+.post article time {
+  text-align: right;
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.post article a::after {
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
 }
 
 .post .thumbnail {
