@@ -1,6 +1,6 @@
 <template>
     <div class="contact contact-form">
-        <form data-netlify="true" method="POST" name="contact">
+        <form data-netlify="true" method="POST" name="my-form">
             <fieldset>
                 <legend>Risus, morbi metus, est bibendum elit nisl morbi nisl. Feugiat interdum.</legend>
                 <div>
