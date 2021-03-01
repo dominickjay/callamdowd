@@ -4,9 +4,8 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const _7481ed2c = () => import('..\\pages\\tutorials\\index.vue' /* webpackChunkName: "pages_tutorials_index" */).then(m => m.default || m)
-const _558675ce = () => import('..\\pages\\about.vue' /* webpackChunkName: "pages_about" */).then(m => m.default || m)
 const _1ce40296 = () => import('..\\pages\\services\\index.vue' /* webpackChunkName: "pages_services_index" */).then(m => m.default || m)
-const _56d7987a = () => import('..\\pages\\tags\\_tag.vue' /* webpackChunkName: "pages_tags__tag" */).then(m => m.default || m)
+const _558675ce = () => import('..\\pages\\about.vue' /* webpackChunkName: "pages_about" */).then(m => m.default || m)
 const _20514526 = () => import('..\\pages\\services\\_slug.vue' /* webpackChunkName: "pages_services__slug" */).then(m => m.default || m)
 const _72cb4be4 = () => import('..\\pages\\tutorials\\_slug.vue' /* webpackChunkName: "pages_tutorials__slug" */).then(m => m.default || m)
 const _753e5093 = () => import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */).then(m => m.default || m)
@@ -75,19 +74,14 @@ export function createRouter () {
 			name: "tutorials"
 		},
 		{
-			path: "/about",
-			component: _558675ce,
-			name: "about"
-		},
-		{
 			path: "/services",
 			component: _1ce40296,
 			name: "services"
 		},
 		{
-			path: "/tags/:tag?",
-			component: _56d7987a,
-			name: "tags-tag"
+			path: "/about",
+			component: _558675ce,
+			name: "about"
 		},
 		{
 			path: "/services/:slug",

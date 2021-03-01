@@ -24,6 +24,7 @@
     --button-cta-background: var(--main-color);
     --font-serif: "lmroman-10", serif;
     --font-sans: "poppins", serif;
+    --grid-gap: 20px;
 }
 
 @font-face {
@@ -123,48 +124,9 @@ a:focus {
 
 .content--contact .content__wrapper {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    grid-gap: var(--grid-gap);
     align-items: flex-start;
-}
-
-.contact-form {
-    padding: 40px 20px;
-    background-color: #f5f5f5;
-    grid-column: 1 / 3;
-    grid-row: 1;
-}
-
-.contact-form fieldset {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
-    border: none;
-}
-
-.contact-form legend {
-    margin-bottom: 20px;
-    font-family: var(--font-serif);
-    font-size: 1.15rem;
-    letter-spacing: .5px;
-}
-
-.contact-form span {
-    margin-bottom: 10px;
-    font-family: var(--font-serif);
-    letter-spacing: .5px;
-}
-
-.contact-form label {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form input {
-    background: none;
-    box-shadow: none;
-    border: none;
-    border-bottom: 1px solid var(--main-color);
 }
 
 .contact-details {
@@ -173,51 +135,6 @@ a:focus {
     grid-row: 1;
     position: sticky;
     top: 0;
-}
-
-.contact-form fieldset div:nth-last-of-type(2) {
-    grid-column: 1 / 3;
-}
-
-.contact-form fieldset div:last-of-type {
-    grid-column: 1 / 3;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.contact-form input,
-.contact-form textarea {
-    font-family: var(--font-serif);
-    letter-spacing: .5px;
-    padding: 10px;
-    background-color: #ededed;
-}
-
-.contact-form fieldset textarea {
-    min-height: 250px;
-    background-color: #ededed;
-    border: 1px solid var(--main-color);
-}
-
-.contact-form fieldset div {
-    margin-bottom: 20px;
-}
-
-.contact-form .button {
-    margin-bottom: 20px;
-    background-color: var(--main-color);
-    color: var(--secondary-font-color);
-    border: 0;
-    cursor: pointer;
-    transition: .25s ease-in-out all;
-}
-
-.contact-form .button:hover {
-    background-color: var(--secondary-font-color);
-    color: var(--main-color);
-}
-
-.contact-details {
     background-image: url(~assets/images/chakra-large-01.svg);
     background-repeat: no-repeat;
     background-position: right -20px bottom -125px;
@@ -298,25 +215,9 @@ a:focus {
         padding: 0 20px;
     }
 
-    .content--contact .content__wrapper {
-        grid-template-columns: repeat(1, 1fr);
-        grid-gap: 0;
-    }
-
-    .contact-form,
     .contact-details {
         grid-row: auto;
-    }
-
-    .contact-form fieldset {
-        grid-template-columns: repeat(1, 1fr);
-        grid-gap: 0;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .contact-form .button {
-        width: 100%;
+        grid-column: 1 / 3;
     }
 
     .contact-details {
@@ -416,14 +317,12 @@ hr {
 }
 
 .content__wrapper {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 20px;
 }
 
 @media (max-width: 992px) {
-    .content__wrapper {
-        flex-direction: column;
-    }
 
     .button {
         width: 100%;

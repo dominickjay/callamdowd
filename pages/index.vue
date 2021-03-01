@@ -76,22 +76,7 @@
             </h2>
             <div class="content__wrapper">
                 <Contact></Contact>
-                <div class="contact contact-details">
-                    <h3>Contact Information</h3>
-                    <p>Risus, morbi metus, est bibendum elit nisl morbi nisl. Feugiat interdum.</p>
-                    <ul class="contact-details__list">
-                        <li class="contact-details__listitem">
-                            <a class="contact-details__listlink contact-details__listlink--tel"
-                            :href="'tel:' + person.fields.phone">{{ person.fields.phone }}</a>
-                        </li>
-                        <li class="contact-details__listitem">
-                            <a class="contact-details__listlink contact-details__listlink--email" :href="'mailto:' + person.fields.email">{{ person.fields.email }}</a>
-                        </li>
-                        <li class="contact-details__listitem">
-                            <a class="contact-details__listlink contact-details__listlink--facebook" href="#">{{ person.fields.facebook }}</a>
-                        </li>
-                    </ul>
-                </div>
+                <ContactDetails :home="home" :person="person"></ContactDetails>
             </div>
         </div>
     </div>
@@ -105,6 +90,7 @@ import VueMarkdown from 'vue-markdown'
 import Logo from '~/components/logo.vue'
 import Navigation from '~/components/navigation.vue'
 import Contact from '~/components/contact.vue'
+import ContactDetails from '~/components/contact-details.vue'
 import ArticlePreview from '~/components/article-preview.vue'
 import ServicePreview from '../components/service-preview.vue'
 
@@ -153,6 +139,7 @@ export default {
     Navigation,
     Logo,
     Contact,
+    ContactDetails,
     ArticlePreview,
     VueMarkdown,
     ServicePreview
@@ -417,15 +404,7 @@ export default {
     margin-bottom: 40px;
 }
 
-.content__wrapper {
-    display: flex;
-    align-items: center;
-}
-
 @media (max-width: 992px) {
-    .content__wrapper {
-        flex-direction: column;
-    }
 
     .button {
         width: 100%;
@@ -434,6 +413,7 @@ export default {
 }
 
 .content--testimonials .content__wrapper {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     min-height: 250px;
@@ -460,7 +440,7 @@ export default {
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
     display: grid;
-    grid-gap: 20px;
+    grid-gap: var(--grid-gap);
     padding: 0;
 }
 
@@ -468,18 +448,15 @@ export default {
     margin-right: 20px;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+    grid-gap: var(--grid-gap);
     width: 100%;
-    max-width: 50%;
 }
 
 @media (max-width: 1024px) {
     .service__list.service__list--home {
         max-width: none;
-        margin: 0;
-        grid-template-columns: repeat(1, 1fr);
-        grid-gap: 10px;
+        grid-column: 1 / 4;
     }
 
     .service__list.service__list--home .service__listitem {
@@ -499,7 +476,6 @@ export default {
 
     .service__image {
         max-width: none;
-        width: 100%;
     }
 
     .content__wrapper {

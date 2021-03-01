@@ -91,6 +91,7 @@ export default {
 
 .service__image {
     max-width: 665px;
+    width: 100%;
 }
 
 .service__listitem--all {
@@ -100,6 +101,7 @@ export default {
 .service__listitem--all .service-block {
     padding: 20px;
     text-transform: uppercase;
+    height: auto;
 }
 
 @media (maxwidth: 640px) {

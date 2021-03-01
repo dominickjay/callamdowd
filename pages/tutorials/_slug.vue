@@ -28,22 +28,7 @@
           </h2>
           <div class="content__wrapper">
             <Contact></Contact>
-            <div class="contact contact-details">
-                <h3>Contact Information</h3>
-                <p>Risus, morbi metus, est bibendum elit nisl morbi nisl. Feugiat interdum.</p>
-                <ul class="contact-details__list">
-                    <li class="contact-details__listitem">
-                        <a class="contact-details__listlink contact-details__listlink--tel"
-                        :href="'tel:' + person.fields.phone">{{ person.fields.phone }}</a>
-                    </li>
-                    <li class="contact-details__listitem">
-                        <a class="contact-details__listlink contact-details__listlink--email" :href="'mailto:' + person.fields.email">{{ person.fields.email }}</a>
-                    </li>
-                    <li class="contact-details__listitem">
-                        <a class="contact-details__listlink contact-details__listlink--facebook" href="#">{{ person.fields.facebook }}</a>
-                    </li>
-                </ul>
-            </div>
+            <ContactDetails :home="home" :person="person"></ContactDetails>
           </div>
       </div>
     </div>
@@ -57,6 +42,7 @@ import {createClient} from '~/plugins/contentful.js'
 import Logo from '~/components/logo.vue'
 import Navigation from '~/components/navigation.vue'
 import Contact from '~/components/contact.vue'
+import ContactDetails from '~/components/contact-details.vue'
 
 const client = createClient()
 
@@ -87,6 +73,7 @@ export default {
     Logo,
     Navigation,
     Contact,
+    ContactDetails,
     VueMarkdown
   }
 }

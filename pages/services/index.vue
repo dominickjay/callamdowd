@@ -31,24 +31,7 @@
             </h2>
             <div class="content__wrapper">
                 <Contact></Contact>
-                <div class="contact contact-details">
-                    <h3>Contact Information</h3>
-                    <p>Risus, morbi metus, est bibendum elit nisl morbi nisl. Feugiat interdum.</p>
-                    <ul class="contact-details__list">
-                        <li class="contact-details__listitem">
-                            <a class="contact-details__listlink contact-details__listlink--tel"
-                                href="tel:+07890 123 456">07890 123 456</a>
-                        </li>
-                        <li class="contact-details__listitem">
-                            <a class="contact-details__listlink contact-details__listlink--email"
-                                href="mailto:info@callamdowd.com">info@callamdowd.com</a>
-                        </li>
-                        <li class="contact-details__listitem">
-                            <a class="contact-details__listlink contact-details__listlink--facebook"
-                                href="#">myfacebookaddress</a>
-                        </li>
-                    </ul>
-                </div>
+                <ContactDetails :home="home" :person="person"></ContactDetails>
             </div>
         </div>
     </div>
@@ -61,6 +44,7 @@ import {createClient} from '~/plugins/contentful.js'
 import Logo from '~/components/logo.vue'
 import Navigation from '~/components/navigation.vue'
 import Contact from '~/components/contact.vue'
+import ContactDetails from '~/components/contact-details.vue'
 import ServicePreview from '~/components/service-preview.vue'
 
 const client = createClient()
@@ -101,6 +85,7 @@ export default {
     ServicePreview,
     Navigation,
     Contact,
+    ContactDetails,
     Logo
   }
 }
@@ -118,19 +103,19 @@ export default {
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
     display: grid;
-    grid-gap: 20px;
+    grid-gap: var(--grid-gap);
     padding: 0;
 }
 
-.service__list.service__list--home {
+/* .service__list.service__list--home {
     margin-right: 20px;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
+    grid-gap: var(--grid-gap);
     width: 100%;
     max-width: 50%;
-}
+} */
 
 @media (max-width: 1024px) {
     .service__list.service__list--home {

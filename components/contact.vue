@@ -44,3 +44,13 @@ export default {
   }
 }
 </script>
+
+<style>
+.contact-form {
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+    grid-column: 1 / 3;
+    grid-row: 1;
+    height: 100%;
+}
+</style>

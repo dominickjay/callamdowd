@@ -17,9 +17,7 @@
                 <h2 class="content__heading">
                 </h2>
                 <div class="content__wrapper">
-                    <div class="bodytext">
-                        <vue-markdown>{{ person.fields.aboutMe }}</vue-markdown>
-                    </div>
+                  <vue-markdown class="bodytext">{{ person.fields.aboutMe }}</vue-markdown>
                 </div>
             </section>
         </div>
@@ -31,31 +29,12 @@
                 </h2>
                 <div class="content__wrapper">
                     <Contact></Contact>
-                    <div class="contact contact-details">
-                        <h3>Contact Information</h3>
-                        <p>Risus, morbi metus, est bibendum elit nisl morbi nisl. Feugiat interdum.</p>
-                        <ul class="contact-details__list">
-                            <li class="contact-details__listitem">
-                                <a class="contact-details__listlink contact-details__listlink--tel"
-                                    href="tel:+07890 123 456">07890 123 456</a>
-                            </li>
-                            <li class="contact-details__listitem">
-                                <a class="contact-details__listlink contact-details__listlink--email"
-                                    href="mailto:info@callamdowd.com">info@callamdowd.com</a>
-                            </li>
-                            <li class="contact-details__listitem">
-                                <a class="contact-details__listlink contact-details__listlink--facebook"
-                                    href="#">myfacebookaddress</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <ContactDetails :home="home" :person="person"></ContactDetails>
                 </div>
             </div>
         </div>
     </div>
-<footer class="footer">a</footer>
-
-    </div>
+    <footer class="footer">a</footer>
   </div>
 </template>
 
@@ -64,6 +43,7 @@ import {createClient} from '~/plugins/contentful.js'
 import Logo from '~/components/logo.vue'
 import Navigation from '~/components/navigation.vue'
 import Contact from '~/components/contact.vue'
+import ContactDetails from '~/components/contact-details.vue'
 import ArticlePreview from '~/components/article-preview.vue'
 import VueMarkdown from 'vue-markdown'
 
@@ -78,11 +58,23 @@ export default {
       client.getEntries({
         'content_type': env.CTF_BLOG_POST_TYPE_ID,
         order: '-sys.createdAt'
+      }),
+      client.getEntries({
+        'sys.id': env.CTF_HOME_ID
+      }),
+      client.getEntries({
+        'content_type': env.CTF_SERVICE_TYPE_ID
+      }),
+      client.getEntries({
+        'content_type': env.CTF_TESTIMONIAL_TYPE_ID
       })
-    ]).then(([entries, posts]) => {
+    ]).then(([entries, posts, home, service, testimonial]) => {
       return {
         person: entries.items[0],
-        posts: posts.items
+        posts: posts.items,
+        home: home.items[0],
+        services: service.items,
+        testimonials: testimonial.items
       }
     }).catch(console.error)
   },
@@ -90,6 +82,7 @@ export default {
     Logo,
     Navigation,
     Contact,
+    ContactDetails,
     ArticlePreview,
     VueMarkdown
   }
@@ -290,6 +283,10 @@ export default {
     display: block;
 }
 
+.bodytext p {
+  margin-bottom: 5px;
+}
+
 @media (max-width: 1200px) {
     .content-banner--home {
         flex-direction: column;
@@ -381,6 +378,10 @@ export default {
 
 .bodytext a {
     color: var(--main-color);
+}
+
+.bodytext p:last-child img {
+  margin: 40px 0;
 }
 
 </style>
