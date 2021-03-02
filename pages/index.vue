@@ -47,27 +47,7 @@
             <h2 class="content__heading">
                 What People Say About Me
             </h2>
-            <div class="content__wrapper">
-                <div class="carousel" id="carousel">
-                    <div class="carousel__items">
-                    <div id="focuspoint" class="visually-hidden" tabindex="-1"></div>
-                        <div aria-hidden="true" class="carousel__item" :key="testimonial.testimonialName" v-for="testimonial in testimonials">
-                            <div class="carousel__content">
-                                <p>"{{ testimonial.fields.testimonial }}"</p>
-                                <p>{{ testimonial.fields.testimonialName }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-buttons">
-                    <button value="prev" aria-label="previous" id="prev" class="carousel-buttons__button">
-                        Previous
-                    </button>
-                    <button value="next" id="next" aria-label="next" class="carousel-buttons__button">
-                        Next
-                    </button>
-                </div>
-            </div>
+            <Testimonials :testimonials="testimonials"></Testimonials>
         </div>
         <hr class="spacer spacer--01">
         <div class="content content--contact" id="contact">
@@ -92,7 +72,8 @@ import Navigation from '~/components/navigation.vue'
 import Contact from '~/components/contact.vue'
 import ContactDetails from '~/components/contact-details.vue'
 import ArticlePreview from '~/components/article-preview.vue'
-import ServicePreview from '../components/service-preview.vue'
+import ServicePreview from '~/components/service-preview.vue'
+import Testimonials from '~/components/carousel.vue'
 
 const client = createClient()
 
@@ -142,7 +123,8 @@ export default {
     ContactDetails,
     ArticlePreview,
     VueMarkdown,
-    ServicePreview
+    ServicePreview,
+    Testimonials
   }
 }
 </script>
