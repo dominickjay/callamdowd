@@ -76,13 +76,26 @@ export default {
 <style>
 .post-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(335px, .5fr));
   grid-gap: var(--grid-gap);
 }
 
 .post {
-  background-color: #FCF7E1;
-  position: relative;
+    --post-block--background: #FCF7E1;
+    background-color: var(--post-block--background);
+    position: relative;
+    font-family: var(--font-sans);
+    transition: background-color ease-in-out .25s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.post:hover {
+    background-color: var(--main-color);
+    color: var(--secondary-font-color);
+    transition: background-color ease-in-out .25s;
 }
 
 .post article > *:not(img){
@@ -95,6 +108,24 @@ export default {
   display: block;
   font-size: 0.85rem;
   opacity: 0.85;
+}
+
+.post article a {
+    text-decoration: none;
+    font-family: var(--font-serif);
+    color: var(--font-color);
+    text-align: right;
+    font-size: 1.15rem;
+    margin-bottom: 0;
+    letter-spacing: .5px;
+}
+
+.post article a:hover {
+    text-decoration: underline;
+}
+
+.post:hover article a {
+    color: var(--secondary-font-color);
 }
 
 .post article a::after {
