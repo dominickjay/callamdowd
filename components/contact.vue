@@ -8,7 +8,7 @@
             data-netlify-honeypot="bot-field"
             >
             <input type="hidden" name="form-name" value="ask-question" />
-            <span class="contact-form__text">Risus, morbi metus, est bibendum elit nisl morbi nisl. Feugiat interdum.</span>
+            <span class="contact-form__text">{{ home.fields.contactFormText }}</span>
             <p>
                 <label>First Name: <input class="contact-form__text" type="text" name="first-name" /></label>
             </p>
@@ -28,6 +28,12 @@
         </form>
     </div>
 </template>
+
+<script>
+export default {
+  props: ['home']
+}
+</script>
 
 <style>
 .contact-form {
@@ -98,7 +104,7 @@ textarea.contact-form__text--textarea {
   width: 100%;
 }
 
-.contact-form__button {
+.button.contact-form__button {
   grid-column: 4 / 5;
   margin-bottom: 20px;
   background-color: var(--main-color);

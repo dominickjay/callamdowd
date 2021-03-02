@@ -6,7 +6,7 @@
             <navigation></navigation>
         </header>
         <div class="content-banner">
-            <div class="content-banner__content" style="background-image: url(images/stock-photo-1.png);">
+            <div class="content-banner__content" :style="'background-image: url(' + home.fields.aboutBannerImage.fields.file.url + ');'">
                 <h2 class="content-banner__head">
                     About Me
                 </h2>
@@ -28,7 +28,7 @@
                     Want to Contact Us?
                 </h2>
                 <div class="content__wrapper">
-                    <Contact></Contact>
+                    <Contact :home="home"></Contact>
                     <ContactDetails :home="home" :person="person"></ContactDetails>
                 </div>
             </div>

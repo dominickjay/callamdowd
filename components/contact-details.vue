@@ -1,7 +1,7 @@
 <template>
     <div class="contact contact-details">
         <h3>Contact Information</h3>
-        <p>{{ home.fields.contactText }}</p>
+        <p>{{ home.fields.contactDetailsText }}</p>
         <ul class="contact-details__list">
             <li class="contact-details__listitem">
                 <a class="contact-details__listlink contact-details__listlink--tel"
