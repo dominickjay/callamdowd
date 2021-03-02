@@ -124,7 +124,7 @@ a:focus {
 
 .content--contact .content__wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: var(--grid-gap);
     align-items: flex-start;
 }
