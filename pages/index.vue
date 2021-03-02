@@ -413,10 +413,9 @@ export default {
 }
 
 .content--testimonials .content__wrapper {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     min-height: 250px;
+    align-items: end;
 }
 
 .content__heading {
@@ -531,6 +530,9 @@ body:hover .visually-hidden button {
     margin-bottom: 40px;
     max-width: 710px;
     width: 100%;
+    grid-column: 1 / 4;
+    grid-row: 1;
+    margin: 0 auto;
 }
 
 .carousel__items {
@@ -565,6 +567,9 @@ body:hover .visually-hidden button {
     justify-content: space-between;
     width: 100%;
     max-width: 709px;
+    grid-row: 2;
+    grid-column: 1 / 4;
+    margin: 0 auto;
 }
 
 .carousel-buttons__button {
