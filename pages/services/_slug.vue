@@ -24,8 +24,18 @@
                 </div>
             </div>
         </section>
-      </div>
-      <Contact></Contact>
+        <hr class="spacer spacer--02">
+          <div class="content content--contact" id="contact">
+              <h2 class="content__heading">
+                  Want to Contact Us?
+              </h2>
+              <div class="content__wrapper">
+                  <Contact :home="home"></Contact>
+                  <ContactDetails :home="home" :person="person"></ContactDetails>
+              </div>
+          </div>
+      <footer class="footer">a</footer>
+    </div>
   </div>
 </template>
 
@@ -35,6 +45,7 @@ import {createClient} from '~/plugins/contentful.js'
 import Logo from '~/components/logo.vue'
 import Navigation from '~/components/navigation.vue'
 import Contact from '~/components/contact.vue'
+import ContactDetails from '~/components/contact-details.vue'
 
 const client = createClient()
 
@@ -47,11 +58,15 @@ export default {
       client.getEntries({
         'content_type': env.CTF_SERVICE_TYPE_ID,
         'fields.serviceSlug': params.serviceSlug
+      }),
+      client.getEntries({
+        'sys.id': env.CTF_HOME_ID
       })
-    ]).then(([entries, services]) => {
+    ]).then(([entries, services, home]) => {
       return {
         person: entries.items[0],
-        service: services.items[0]
+        service: services.items[0],
+        home: home.items[0]
       }
     }).catch(console.error)
   },
@@ -59,6 +74,7 @@ export default {
     Logo,
     Navigation,
     Contact,
+    ContactDetails,
     VueMarkdown
   }
 }

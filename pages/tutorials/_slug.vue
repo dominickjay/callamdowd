@@ -27,7 +27,7 @@
               Want to Contact Me?
           </h2>
           <div class="content__wrapper">
-            <Contact></Contact>
+            <Contact :home="home"></Contact>
             <ContactDetails :home="home" :person="person"></ContactDetails>
           </div>
       </div>
@@ -55,11 +55,15 @@ export default {
       client.getEntries({
         'content_type': env.CTF_BLOG_POST_TYPE_ID,
         'fields.slug': params.slug
+      }),
+      client.getEntries({
+        'sys.id': env.CTF_HOME_ID
       })
-    ]).then(([entries, posts]) => {
+    ]).then(([entries, posts, home]) => {
       return {
         person: entries.items[0],
-        post: posts.items[0]
+        post: posts.items[0],
+        home: home.items[0]
       }
     })
     .catch(console.error)

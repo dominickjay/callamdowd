@@ -19,7 +19,7 @@
               Want to Contact Me?
           </h2>
           <div class="content__wrapper">
-            <Contact></Contact>
+            <Contact :home="home"></Contact>
             <ContactDetails :home="home" :person="person"></ContactDetails>
           </div>
       </div>

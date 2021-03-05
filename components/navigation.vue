@@ -12,6 +12,11 @@
             </nuxt-link>
         </li>
         <li class="navigation__listitem">
+            <nuxt-link class="navigation__listlink" to="/accreditations">
+                Accreditations
+            </nuxt-link>
+        </li>
+        <li class="navigation__listitem">
             <nuxt-link class="navigation__listlink" to="/services">
                 Services
             </nuxt-link>
