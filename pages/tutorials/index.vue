@@ -6,6 +6,14 @@
           <navigation></navigation>
       </header>
 
+      <div class="content-banner">
+        <div class="content-banner__content" :style="'background-image: url(' + home.fields.serviceBannerImage.fields.file.url + ');'">
+          <h2 class="content-banner__head">
+            {{ page.title }}
+          </h2>
+        </div>
+      </div>
+
       <section class="content content--posts">
         <ul class="post-list wrapper">
           <li class="post" v-for="post in posts">
@@ -62,6 +70,13 @@ export default {
         services: service.items
       }
     }).catch(console.error)
+  },
+  data () {
+    return {
+      page: {
+        title: 'Tutorials'
+      }
+    }
   },
   components: {
     ArticlePreview,

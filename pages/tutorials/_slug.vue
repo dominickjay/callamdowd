@@ -6,18 +6,28 @@
           <navigation></navigation>
       </header>
 
+      <div class="content-banner">
+            <div
+              class="content-banner__content"
+              :style="'background-image: url(' + post.fields.heroImage.fields.file.url + ');'">
+            >
+                <h2 class="content-banner__head">
+                    {{ post.fields.title }}
+                </h2>
+            </div>
+        </div>
+
       <section class="body-container">
-        <main class="wrapper">
+        <main class="content">
           <div class="headline">
             <time class="tiny">{{ ( new Date(post.fields.publishDate)).toDateString() }}</time>
-            <h1>{{ post.fields.title }}</h1>
           </div>
           <div class="copy">
             <vue-markdown>{{post.fields.body}}</vue-markdown>
             <video controls>
                 <source :src="post.fields.video.fields.file.url" type="video/mp4">
               Your browser does not support the video tag.
-              </video>
+            </video>
           </div>
         </main>
       </section>
@@ -117,6 +127,11 @@ export default {
 
 .copy li {
   margin: 0;
+}
+
+time {
+  font-weight: 700;
+  font-size: 1.25rem;
 }
 
 </style>
