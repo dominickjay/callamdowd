@@ -337,6 +337,18 @@ export default {
     .content-banner {
         margin-bottom: 0;
     }
+
+    .content-banner--home .content-banner__wrapper {
+        max-height: none;
+    }
+
+    .content-banner--home .content-banner__image {
+        top: 0;
+        transform: none;
+        min-height: auto;
+        min-width: auto;
+    }
+
 }
 
 .button {
@@ -472,6 +484,10 @@ export default {
         display: none;
     }
 
+    .service__list.service__list--home {
+        grid-template-columns: repeat(1, minmax(250px, 1fr));
+    }
+
 }
 
 .footer {
@@ -560,6 +576,10 @@ body:hover .visually-hidden button {
     background-color: var(--main-color);
     color: var(--secondary-font-color);
     transition: all .25s ease-in-out;
+}
+
+button.slick-arrow:nth-child(3) {
+    right: 0;
 }
 
 </style>

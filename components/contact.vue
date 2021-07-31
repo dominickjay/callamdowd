@@ -45,9 +45,8 @@ export default {
 }
 
 .contact-form__form {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: var(--grid-gap);
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .contact-form__form label {
@@ -88,16 +87,19 @@ textarea.contact-form__text--textarea {
 .contact-form__form p:nth-child(3),
 .contact-form__form p:nth-child(5) {
   grid-column: 1 / 3;
+  flex: 1 1 auto;
 }
 
 .contact-form__form p:nth-child(2),
 .contact-form__form p:nth-child(4),
 .contact-form__form p:nth-child(6) {
   grid-column: 3 / 5;
+  flex: 1 1 auto;
 }
 
 .contact-form__form p:last-of-type {
   grid-column: 1 / 5;
+  flex: 1 1 auto;
 }
 
 .contact-form__text--textarea {
@@ -106,6 +108,7 @@ textarea.contact-form__text--textarea {
 
 .button.contact-form__button {
   grid-column: 4 / 5;
+  flex: 1 1 auto;
   margin-bottom: 20px;
   background-color: var(--main-color);
   color: var(--secondary-font-color);
