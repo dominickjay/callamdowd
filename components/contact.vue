@@ -115,6 +115,9 @@ textarea.contact-form__text--textarea {
   border: 0;
   cursor: pointer;
   transition: .25s ease-in-out all;
+  max-height: 140px;
+  margin: 0 20px 40px;
+  align-self: end;
 }
 
 .contact-form__button:hover {
